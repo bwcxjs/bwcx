@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["es6", "DOM"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitThis": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "bwcx-common":  ["./packages/bwcx-common/src"],
+      "bwcx-common/*":  ["./packages/bwcx-common/src/*"],
+      "bwcx-core":  ["./packages/bwcx-core/src"],
+      "bwcx-core/*":  ["./packages/bwcx-core/src/*"],
+      "bwcx-ljsm":  ["./packages/bwcx-ljsm/src"],
+      "bwcx-ljsm/*":  ["./packages/bwcx-ljsm/src/*"],
+      "bwcx-api":  ["./packages/bwcx-api/src"],
+      "bwcx-api/*":  ["./packages/bwcx-api/src/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

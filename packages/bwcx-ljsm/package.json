@@ -1,0 +1,38 @@
+{
+	"name": "bwcx-ljsm",
+	"version": "1.0.0",
+	"description": "A light, progressive Node.js web framework",
+	"main": "index.js",
+	"keywords": [],
+	"author": "bLue",
+	"license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+  },
+	"dependencies": {
+		"@koa/multer": "^3.0.0",
+		"@types/koa": "^2.11.0",
+		"@types/koa-bodyparser": "^4.3.0",
+		"@types/koa-router": "^7.4.1",
+		"@types/lodash": "^4.14.167",
+		"@types/multer": "^1.4.5",
+		"async-exit-hook-improved": "^2.0.3",
+    "bwcx-common": "^1.0.0",
+    "bwcx-core": "^1.0.0",
+		"class-transformer": "^0",
+		"class-validator": "^0",
+		"debug": "^4.3.1",
+		"globby": "^11.0.2",
+		"koa": "^2.11.0",
+		"koa-bodyparser": "^4.3.0",
+		"koa-compose": "^4.1.0",
+		"koa-router": "^7.4.0",
+		"lodash": "^4.17.20",
+		"multer": "^1.4.2",
+		"reflect-metadata": "^0.1.13"
+	},
+	"publishConfig": {
+		"directory": "dist"
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "npmClient": "npm",
+  "command": {
+    "bootstrap": {
+    },
+    "version": {
+      "allowBranch": "master"
+    },
+    "publish": {
+      "contents": "dist",
+      "ignoreChanges": [
+        "test/**/*"
+      ],
+      "message": "chore(release): publish"
+    }
+  }
+}

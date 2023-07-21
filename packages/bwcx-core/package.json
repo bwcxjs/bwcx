@@ -1,0 +1,26 @@
+{
+  "name": "bwcx-core",
+  "version": "1.0.0",
+  "description": "Core modules for bwcx packages",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ../../scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "bLue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+  },
+  "dependencies": {
+    "bwcx-common": "^1.0.0",
+    "dainty-di": "^1.0.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
+}

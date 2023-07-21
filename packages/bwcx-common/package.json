@@ -1,0 +1,24 @@
+{
+  "name": "bwcx-common",
+  "version": "1.0.0",
+  "description": "Common typings, decorators, utils, etc. for bwcx packages",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ../../scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "bLue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
+}

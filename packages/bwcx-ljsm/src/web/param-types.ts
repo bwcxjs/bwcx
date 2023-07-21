@@ -1,0 +1,16 @@
+export const ROUTE_PARAM_TYPES = {
+  Ctx: 'ctx',
+  Query: 'query',
+  Param: 'param',
+  Body: 'body',
+  File: 'file',
+  Data: 'data',
+  Header: 'header',
+  Cookie: 'cookie',
+  Session: 'session',
+  UserAgent: 'userAgent',
+  Referer: 'referer',
+  Host: 'host',
+  Url: 'url',
+  Custom: 'custom',
+};

@@ -1,0 +1,29 @@
+{
+  "name": "bwcx-api-client",
+  "version": "1.0.0",
+  "description": "A bwcx api client",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ../../scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "bLue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+  },
+  "dependencies": {
+    "bwcx-api": "^1.0.0",
+    "bwcx-common": "^1.0.0",
+    "func-loc": "^0.1.16",
+    "debug": "^4.3.1",
+    "fs-extra": "^10.0.0"
+  },
+  "peerDependencies": {
+    "class-transformer": "^0",
+    "urlcat-fork": "^2"
+  }
+}
