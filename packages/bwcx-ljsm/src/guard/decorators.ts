@@ -5,7 +5,7 @@ import { Newable } from 'bwcx-common';
 
 /**
  * @decorator {class}
- * @autoProvide {request-transient scope}
+ * @autoProvide {DeferredTransient scope}
  */
 export function Guard(options: { when?: string | boolean; override?: boolean } = {}) {
   return createCustomProvideDecoratorFactory({

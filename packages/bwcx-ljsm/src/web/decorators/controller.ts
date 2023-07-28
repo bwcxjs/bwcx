@@ -11,7 +11,7 @@ export interface ControllerOptions {
 
 /**
  * @decorator {class}
- * @autoProvide {request scope}
+ * @autoProvide {Deferred scope}
  * @param path
  */
 export function Controller(path?: string, options: ControllerOptions = {}) {

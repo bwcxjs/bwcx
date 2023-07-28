@@ -5,7 +5,7 @@ import { createCustomProvideDecoratorFactory, ProviderScope } from 'bwcx-core';
 
 /**
  * @decorator {class}
- * @autoProvide {request-transient scope}
+ * @autoProvide {DeferredTransient scope}
  */
 export function Middleware(options: { when?: string | boolean; override?: boolean } = {}) {
   return createCustomProvideDecoratorFactory({

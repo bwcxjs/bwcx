@@ -2,7 +2,7 @@ import { createCustomProvideDecoratorFactory, ProviderScope } from 'bwcx-core';
 
 /**
  * @decorator {class}
- * @autoProvide {transient scope}
+ * @autoProvide {Transient scope}
  */
 export function Plugin(options: { when?: string | boolean; override?: boolean } = {}) {
   return createCustomProvideDecoratorFactory({

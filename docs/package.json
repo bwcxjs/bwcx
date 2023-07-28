@@ -1,0 +1,15 @@
+{
+  "name": "bwcx-docs",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "keywords": [],
+  "author": "bLue",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.66"
+  }
+}

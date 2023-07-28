@@ -2,7 +2,7 @@ import { createCustomProvideDecoratorFactory, DependencyIdentifier, ProviderScop
 
 /**
  * @decorator {class}
- * @autoProvide {singleton scope}
+ * @autoProvide {Singleton scope}
  */
 export function Config(id?: DependencyIdentifier, options: { when?: string | boolean; override?: boolean } = {}) {
   return createCustomProvideDecoratorFactory({

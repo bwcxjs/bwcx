@@ -4,7 +4,7 @@ import { createCustomProvideDecoratorFactory, ProviderScope } from 'bwcx-core';
 
 /**
  * @decorator {class}
- * @autoProvide {singleton scope}
+ * @autoProvide {Singleton scope}
  * @param exception
  */
 export function ExceptionHandler(exception: Newable<Error>, options: { when?: string | boolean; override?: boolean } = {}) {

@@ -8,3 +8,5 @@ npm-debug.log
 tsconfig.tsbuildinfo
 lerna-debug.log
 temp/
+.temp
+.cache

@@ -2,7 +2,7 @@ import { createCustomProvideDecoratorFactory, DependencyIdentifier, ProviderScop
 
 /**
  * @decorator {class}
- * @autoProvide {request scope}
+ * @autoProvide {Deferred scope}
  * @param id
  */
 export function Service(id?: DependencyIdentifier, options: { when?: string | boolean; override?: boolean } = {}) {
