@@ -10,7 +10,7 @@ bwcx 集成了数据校验能力，并和 OOP 结合，以提供统一的开发�
 
 我们还提供 `@FromParam()`、`@FromQuery()`、`@FromBody()` 这几个装饰器，用来指明字段的来源。对开发者来说，请求数据是自动拼装好的一个对象，不再需要关心字段从哪来，并分别校验。
 
-安装依赖：`npm i -S bwcx-common`
+安装依赖：`npm i -S class-validator class-transformer`
 
 ```typescript
 import { FromQuery } from 'bwcx-common';
@@ -55,7 +55,7 @@ DTO 不应注入其他的类，也不应该带有业务逻辑的复杂校验，�
 
 使用 `@Contract()` 装饰器指定该接口的请求和响应类型约束。如果为空，则传 `null`。
 
-同时，可以使用 `@Data()` 装饰器获取校验通过的请求对象。如果校验不通过，则抛出 `ValidationException` 异常。关于如何处理异常，参见 [异常处理](/exception)。
+同时，可以使用 `@Data()` 装饰器获取校验通过的请求对象。如果校验不通过，则抛出 `ValidationException` 异常。关于如何处理异常，参见 [异常处理](/core/exception.md)。
 
 ```typescript {8-9}
 import { Inject } from 'bwcx-core';
