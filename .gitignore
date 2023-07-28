@@ -7,6 +7,7 @@ coverage/
 npm-debug.log
 tsconfig.tsbuildinfo
 lerna-debug.log
+pnpm-debug.log
 temp/
 .temp
 .cache
