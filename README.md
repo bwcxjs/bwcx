@@ -97,7 +97,7 @@ export default class HomeController {
 }
 ```
 
-### 全局异常处理
+### 异常处理
 
 ```typescript
 @ExceptionHandler(Exception)
@@ -147,4 +147,4 @@ export default class UserController {
 
 ## 谁在使用
 
-<img src="./assets/logo-WeChat.png" style="max-width: 250px" alt="logo-wechat" />
+<img src="./assets/logo-WeChat.png" style="width: 250px" alt="logo-wechat" />
