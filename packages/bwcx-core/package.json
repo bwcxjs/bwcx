@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles --forceExit",
+    "test:coverage": "jest --coverage --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch --detectOpenHandles --forceExit",
     "prepublishOnly": "npm run build"
   },
   "keywords": [],
