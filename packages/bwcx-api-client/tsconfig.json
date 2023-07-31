@@ -9,7 +9,6 @@
   "include": ["src/**/*"],
   "references": [
     { "path": "../bwcx-common/tsconfig.json" },
-    { "path": "../bwcx-api/tsconfig.json" },
-    { "path": "../bwcx-ljsm/tsconfig.json" }
+    { "path": "../bwcx-api/tsconfig.json" }
   ]
 }
