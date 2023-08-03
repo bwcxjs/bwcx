@@ -566,7 +566,7 @@ export abstract class App {
    *
    * @returns The listening http server
    */
-  public async start() {
+  public async start(): Promise<Server> {
     appDebug('running lifecycle: beforeStart');
     // Inject `beforeStart` of plugins
     for (const pluginInstance of this._pluginInstances) {
