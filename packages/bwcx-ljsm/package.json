@@ -1,6 +1,6 @@
 {
   "name": "bwcx-ljsm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A light, progressive Node.js web framework",
   "main": "index.js",
   "scripts": {
