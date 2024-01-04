@@ -1,6 +1,6 @@
 {
   "name": "bwcx-api-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A bwcx api client",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,8 @@
     "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "dependencies": {
-    "bwcx-api": "^1.0.0",
-    "bwcx-common": "^1.0.0",
+    "bwcx-api": "^1.0.1",
+    "bwcx-common": "^1.0.1",
     "debug": "^4.3.1",
     "fs-extra": "^10.0.0",
     "func-loc": "^0.1.16"

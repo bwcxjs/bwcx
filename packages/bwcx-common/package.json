@@ -1,6 +1,6 @@
 {
   "name": "bwcx-common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common typings, decorators, utils, etc. for bwcx packages",
   "main": "index.js",
   "scripts": {

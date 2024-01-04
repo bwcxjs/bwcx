@@ -1,6 +1,6 @@
 {
   "name": "bwcx-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core modules for bwcx packages",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "dependencies": {
-    "bwcx-common": "^1.0.0",
+    "bwcx-common": "^1.0.1",
     "dainty-di": "^1.0.0",
     "reflect-metadata": "^0.1.13"
   },
