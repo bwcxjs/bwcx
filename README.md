@@ -2,7 +2,7 @@
 
 轻量、渐进式、面向对象的 Node.js Web 框架。
 
-[参阅文档](https://tit-frontend.github.io/bwcx/) 以快速上手和查阅 API。
+[参阅文档](https://bwcxjs.github.io/bwcx/) 以快速上手和查阅 API。
 
 ## 基本安装
 
