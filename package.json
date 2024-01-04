@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+    "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "devDependencies": {
     "@types/debug": "^4.1.5",

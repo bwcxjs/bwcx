@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+    "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "dependencies": {
     "bwcx-common": "^1.0.0",

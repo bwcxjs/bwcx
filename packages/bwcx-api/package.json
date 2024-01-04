@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TIT-Frontend/bwcx.git"
+    "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.13"
