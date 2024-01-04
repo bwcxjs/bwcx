@@ -6,7 +6,7 @@ export default defineUserConfig({
   title: 'bwcx',
   description: '轻量、渐进式、面向对象的 Node.js Web 框架',
   theme: defaultTheme({
-    repo: 'TIT-Frontend/bwcx',
+    repo: 'bwcxjs/bwcx',
     docsBranch: 'master',
     docsDir: 'docs/docs',
     navbar: [],
