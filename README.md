@@ -4,6 +4,9 @@
 
 [参阅文档](https://bwcxjs.github.io/bwcx/) 以快速上手和查阅 API。
 
+也可以直接使用下列功能强大的模板来创建项目：
+- [bwcx-vue3-ssr-template](https://github.com/bwcxjs/bwcx-vue3-ssr-template)：使用了 bwcx 一体化开发能力，基于 Vue 3 的全栈模板
+
 ## 基本安装
 
 ```sh
