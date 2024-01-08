@@ -19,7 +19,13 @@
       "bwcx-ljsm":  ["./packages/bwcx-ljsm/src"],
       "bwcx-ljsm/*":  ["./packages/bwcx-ljsm/src/*"],
       "bwcx-api":  ["./packages/bwcx-api/src"],
-      "bwcx-api/*":  ["./packages/bwcx-api/src/*"]
+      "bwcx-api/*":  ["./packages/bwcx-api/src/*"],
+      "bwcx-client-vue":  ["./packages/bwcx-client-vue/src"],
+      "bwcx-client-vue/*":  ["./packages/bwcx-client-vue/src/*"],
+      "bwcx-client-vue2":  ["./packages/bwcx-client-vue2/src"],
+      "bwcx-client-vue2/*":  ["./packages/bwcx-client-vue2/src/*"],
+      "bwcx-client-vue3":  ["./packages/bwcx-client-vue3/src"],
+      "bwcx-client-vue3/*":  ["./packages/bwcx-client-vue3/src/*"]
     }
   },
   "exclude": [

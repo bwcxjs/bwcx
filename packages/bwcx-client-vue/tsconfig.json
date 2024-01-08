@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["reflect-metadata", "jest"],
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"],
+  "references": [
+    { "path": "../bwcx-common/tsconfig.json" },
+    { "path": "../bwcx-core/tsconfig.json" },
+    { "path": "../bwcx-ljsm/tsconfig.json" }
+  ]
+}

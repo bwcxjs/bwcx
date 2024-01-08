@@ -1,0 +1,36 @@
+{
+  "name": "bwcx-client-vue",
+  "version": "1.0.0",
+  "description": "The Vue client common modules for bwcx",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ../../scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "bLue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwcxjs/bwcx.git"
+  },
+  "dependencies": {
+    "bwcx-ljsm": "^1.0.2",
+    "bwcx-common": "^1.0.1",
+    "bwcx-core": "^1.0.1",
+    "chokidar": "^2.1.8",
+    "debug": "^4.3.2",
+    "fs-extra": "^10.0.0",
+    "globby": "^11.0.2",
+    "reflect-metadata": "^0.1.13",
+    "relative": "^3.0.2",
+    "ts-morph": "^12.0.0",
+    "tsconfig-paths": "^3.11.0",
+    "urlcat-fork": "^2.0.5",
+    "urlconcat": "0.0.12"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
+}
