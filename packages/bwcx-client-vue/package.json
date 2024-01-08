@@ -16,9 +16,9 @@
     "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "dependencies": {
-    "bwcx-ljsm": "^1.0.2",
     "bwcx-common": "^1.0.1",
     "bwcx-core": "^1.0.1",
+    "bwcx-ljsm": "^1.0.2",
     "chokidar": "^2.1.8",
     "debug": "^4.3.2",
     "fs-extra": "^10.0.0",
