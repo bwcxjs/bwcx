@@ -7,11 +7,11 @@ bwcx 支持通过插件扩展框架功能，可以通过引入插件来增强框
 通常使用插件非常简单，只需要使用 `usePlugin()`，传入插件和需要的配置类即可。框架会自动根据环境注入对应的配置类对象到插件中。
 
 ```typescript {5}
-import BwcxOrm from 'bwcx-orm';
-import DbConfig from './configs/db/db.config';
+import SomeBwcxPlugin from 'some-plugin';
+import PluginConfig from '/path/to/my-plugin-config';
 
 class OurApp extends App {
-  protected plugins = [this.usePlugin(BwcxOrm, DbConfig)];
+  protected plugins = [this.usePlugin(SomeBwcxPlugin, PluginConfig)];
 }
 ```
 
@@ -29,7 +29,7 @@ class OurApp extends App {
 // src/container-key.ts
 
 const CONTAINER_KEY = {
-  Connection: Symbol.for('plugin:ORM:Connection'),
+  Connection: Symbol.for('bwcx:plugin:orm:Connection'),
 };
 
 export default CONTAINER_KEY;
@@ -39,7 +39,7 @@ export default CONTAINER_KEY;
 // src/metadata-key.ts
 
 const METADATA_KEY = {
-  EntityModel: Symbol.for('plugin:orm:EntityModel'),
+  EntityModel: Symbol.for('bwcx:plugin:orm:EntityModel'),
 };
 
 export default METADATA_KEY;
@@ -62,7 +62,7 @@ export default class OrmPlugin implements IBwcxPlugin {
 
   // 插件激活时。这个过程发生在 App.wire 中，将在装配的最初阶段执行每个插件的 `onActivate`
   public async onActivate(config: OrmConfig) {
-    console.log('orm plugin activate');
+    console.log('orm plugin on activate');
     const connection = {
       fake: true,
       name: 'default',
@@ -139,7 +139,7 @@ export function InjectRepository(entity: Newable, connectionName = 'default') {
   return function (target, propertyKey: string) {
     const identifier = entity;
     inject(identifier)(target, propertyKey);
-    tagged('plugin:orm:ConnectionName', connectionName)(target, propertyKey);
+    tagged('bwcx:plugin:orm:tag:ConnectionName', connectionName)(target, propertyKey);
   };
 }
 ```
@@ -165,7 +165,7 @@ export default class OrmPlugin implements IBwcxPlugin {
       this.container
         .bind(identifier)
         .toConstantValue(connection.getRepository(target))
-        .whenTargetTagged('plugin:orm:ConnectionName', connection.name);
+        .whenTargetTagged('bwcx:plugin:orm:tag:ConnectionName', connection.name);
     }
   }
 }
