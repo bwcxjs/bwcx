@@ -1,6 +1,6 @@
 {
   "name": "bwcx-client-vue2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Vue 2 client modules for bwcx",
   "main": "index.js",
   "scripts": {
