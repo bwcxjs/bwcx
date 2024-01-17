@@ -18,7 +18,7 @@ class RouterAction extends AbstractRouterAction {
     onAbort?: ErrorHandler,
   ) {
     // @ts-ignore
-    this.vueInstance.$router?.push(
+    return this.vueInstance.$router?.push(
       {
         name: this.name,
         ...this.parseOptions(options),
@@ -36,7 +36,7 @@ class RouterAction extends AbstractRouterAction {
     onAbort?: ErrorHandler,
   ) {
     // @ts-ignore
-    this.vueInstance.$router?.replace(
+    return this.vueInstance.$router?.replace(
       {
         name: this.name,
         ...this.parseOptions(options),

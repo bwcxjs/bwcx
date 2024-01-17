@@ -17,7 +17,7 @@ class RouterAction extends AbstractRouterAction {
 
   public push(options: any, rawOptions?: PartialRawOptions) {
     // @ts-ignore
-    this.routerContext.$router?.push({
+    return this.routerContext.$router?.push({
       name: this.name,
       ...this.parseOptions(options),
       ...rawOptions,
@@ -26,7 +26,7 @@ class RouterAction extends AbstractRouterAction {
 
   public replace(options: any, rawOptions?: PartialRawOptions) {
     // @ts-ignore
-    this.routerContext.$router?.replace({
+    return this.routerContext.$router?.replace({
       name: this.name,
       ...this.parseOptions(options),
       ...rawOptions,
