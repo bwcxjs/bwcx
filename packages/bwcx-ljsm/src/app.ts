@@ -588,6 +588,29 @@ export abstract class App {
   }
 
   /**
+   * Start the application manually.
+   *
+   * Starting process：
+   * - beforeStart
+   * - handleStart
+   * - afterStart
+   */
+  public async startManually(handleStart: () => Promise<void>): Promise<void> {
+    appDebug('running lifecycle: beforeStart');
+    // Inject `beforeStart` of plugins
+    for (const pluginInstance of this._pluginInstances) {
+      if (pluginInstance.beforeStart) {
+        await pluginInstance.beforeStart();
+      }
+    }
+    await this.beforeStart();
+    appDebug('running lifecycle: start');
+    await handleStart();
+    appDebug('running lifecycle: afterStart');
+    await this.afterStart();
+  }
+
+  /**
    * Stop the application.
    */
   public async stop() {
