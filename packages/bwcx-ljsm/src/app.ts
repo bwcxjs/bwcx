@@ -446,7 +446,7 @@ export abstract class App {
             ...globalMiddlewares,
             ...globalGuards,
             // File uploading middleware
-            this.multerOptions !== null
+            this.multerOptions !== null && uploadFields.length > 0
               ? this._multerInstance.fields(uploadFields)
               : (_, next) => next(),
             validationRegister.getMiddleware(contract.req, contract.resp),
