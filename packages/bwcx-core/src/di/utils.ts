@@ -2,8 +2,8 @@ import { ContainerAccessor, DependencyIdentifier } from 'dainty-di';
 import { DIUtility } from 'dainty-di';
 import { DeferredScopeUtility } from 'dainty-di';
 
-export type { Container, DependencyIdentifier } from 'dainty-di';
-export { ProviderScope } from 'dainty-di';
+export type { DependencyIdentifier } from 'dainty-di';
+export { Container, ProviderScope } from 'dainty-di';
 export const getContainer = ContainerAccessor.getRootContainer;
 export const resetContainer = ContainerAccessor.resetRootContainer;
 export const provideClass = DIUtility.provideClass;

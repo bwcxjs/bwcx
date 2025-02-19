@@ -277,12 +277,19 @@ export abstract class App {
       this._pluginInstances.push(pluginInstance);
       await pluginInstance.onActivate(pluginConfig);
     }
-    // Initializing plug-in middleware
+    // Initialize and use plugin app-level middlewares
+    const pluginAppMiddlewares: ApplicationMiddleware[] = [];
+    for (const pluginInstance of this._pluginInstances) {
+      if (pluginInstance.getAppMiddleware) {
+        pluginAppMiddlewares.push(await pluginInstance.getAppMiddleware());
+      }
+    }
+    pluginAppMiddlewares.forEach((middleware) => this.instance.use(middleware));
+    // Initialize plugin middlewares (for routes)
     const pluginMiddlewares: ApplicationMiddleware[] = [];
     for (const pluginInstance of this._pluginInstances) {
       if (pluginInstance.getMiddleware) {
-        const middleware = await pluginInstance.getMiddleware();
-        pluginMiddlewares.push(middleware);
+        pluginMiddlewares.push(await pluginInstance.getMiddleware());
       }
     }
     // Get global middlewares

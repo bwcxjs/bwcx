@@ -19,6 +19,8 @@ export interface IBwcxResponseHandler {
 export interface IBwcxPlugin {
   onActivate(config: any): void | Promise<void>;
 
+  getAppMiddleware?(): ApplicationMiddleware | Promise<ApplicationMiddleware>;
+
   getMiddleware?(): ApplicationMiddleware | Promise<ApplicationMiddleware>;
 
   afterWire?(): void | Promise<void>;
