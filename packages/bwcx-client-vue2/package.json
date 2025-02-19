@@ -1,6 +1,6 @@
 {
   "name": "bwcx-client-vue2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The Vue 2 client modules for bwcx",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/bwcxjs/bwcx.git"
   },
   "dependencies": {
-    "bwcx-client-vue": "^1.0.2",
+    "bwcx-client-vue": "^1.0.3",
     "bwcx-common": "^1.0.1",
     "reflect-metadata": "^0.1.13"
   },
