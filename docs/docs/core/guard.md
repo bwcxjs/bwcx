@@ -65,7 +65,7 @@ export default class UserController {
 有时我们可能更习惯把多个封装好的守卫以装饰器形式罗列起来按顺序校验，并可能在多个校验之间穿插一些其他装饰器。bwcx 提供了 `createGuardGroup` 方法，可以创建一个 `<string | symbol, IBwcxGuard>` 的守卫组对象，方便快速取出单个守卫。
 
 ```typescript
-import { createGuardGroup } from 'bwcx/guard';
+import { createGuardGroup } from 'bwcx-ljsm/guard';
 import LoginGuard from './login.guard';
 import IsSelfGuard from './self.guard';
 import AdminGuard from './admin.guard';

@@ -41,7 +41,7 @@ bwcx 提供了 `api-client`，为前后端一体化开发提供近乎无感的�
 
 ```typescript
 import { App, getDependency } from 'bwcx-ljsm';
-import BWCX_CONTAINER_KEY from 'bwcx/lib/container-key';
+import BWCX_CONTAINER_KEY from 'bwcx-ljsm/container-key';
 import { ApiClientGenerator } from 'bwcx-api-client/generator';
 
 class OurApp extends App {
