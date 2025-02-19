@@ -60,7 +60,7 @@ export default class OrmPlugin implements IBwcxPlugin {
   @InjectContainer()
   container: Container;
 
-  // 插件激活时。这个过程发生在 App.wire 中，将在装配的最初阶段执行每个插件的 `onActivate`
+  // 插件激活时。这个过程发生在 `App.wire` 中，将在装配的最初阶段执行每个插件的 `onActivate`
   public async onActivate(config: OrmConfig) {
     console.log('orm plugin on activate');
     const connection = {
@@ -73,6 +73,15 @@ export default class OrmPlugin implements IBwcxPlugin {
     };
     // 将数据库连接对象存放到容器
     this.container.bind(CONTAINER_KEY.Connection).toConstantValue(connection);
+  }
+
+  // 提供 App 级别的中间件，并直接挂载到 Koa 实例（`App.instance`）。这个过程发生在 `onActivate` 后
+  public getAppMiddleware() {
+    return async (ctx: RequestContext, next: MiddlewareNext) => {
+      console.log('orm plugin app instance level middleware in');
+      await next();
+      console.log('orm plugin app instance level middleware out');
+    };
   }
 
   // 提供中间件。插件中间件将在用户指定的全局中间件之前挂载
