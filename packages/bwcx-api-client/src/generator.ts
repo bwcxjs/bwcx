@@ -334,7 +334,7 @@ ${opts.reqParamSource.body.map((i) => `  formData.append('${i}', req.${i});`).jo
     }
     const reqStr = this.getReqOrRespStr(opts.req);
     const respStr = this.getReqOrRespStr(opts.resp);
-    return `${this.nta(this.aIndex)}: (req: ${reqStr}${
+    return `${this.nta(this.aIndex)}: (req${opts.req ? '' : '?'}: ${reqStr}${
       this.config.enableExtraReqOptions ? `, opts?: any` : ''
     }) => {
   ${formDataGen}return {
