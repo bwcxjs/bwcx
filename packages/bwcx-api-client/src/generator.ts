@@ -295,7 +295,7 @@ ${baseIndent}}`;
     }
  * @returns {${this.getReqOrRespStr(opts.resp)}} The response data (RespDTO).
  */
-public async ${opts.name}(req: ${this.getReqOrRespStr(opts.req)}${
+public async ${opts.name}(req${opts.req ? '' : '?'}: ${this.getReqOrRespStr(opts.req)}${
       this.config.enableExtraReqOptions ? `, opts?: T` : ''
     }): Promise<${this.getReqOrRespStr(opts.resp)}> {
   return this._r(this._rArgs.${this.nta(this.aIndex)}(req${
@@ -334,7 +334,7 @@ ${opts.reqParamSource.body.map((i) => `  formData.append('${i}', req.${i});`).jo
     }
     const reqStr = this.getReqOrRespStr(opts.req);
     const respStr = this.getReqOrRespStr(opts.resp);
-    return `${this.nta(this.aIndex)}: (req: ${reqStr}${
+    return `${this.nta(this.aIndex)}: (req${opts.req ? '' : '?'}: ${reqStr}${
       this.config.enableExtraReqOptions ? `, opts?: any` : ''
     }) => {
   ${formDataGen}return {
