@@ -1,9 +1,5 @@
 import { Newable } from 'bwcx-common';
-import {
-  getPropsDefinitionFromRouteProps,
-  getReflectionRouteProps,
-  RenderMethodKind,
-} from 'bwcx-client-vue';
+import { getPropsDefinitionFromRouteProps, getReflectionRouteProps, RenderMethodKind } from 'bwcx-client-vue';
 import Vue from 'vue';
 import type { RouteConfig, RoutePropsFunction } from 'vue-router/types/router';
 import type { RecordPropsDefinition } from 'vue/types/options';
@@ -28,11 +24,8 @@ export interface AnalysedOutputRoute {
 }
 
 export function parseRoutes(routes: AnalysedOutputRoute[]): RouteConfig[] {
-  const parseRouteProps = (
-    routePropsClass: Newable | undefined,
-    propsInOptions?: boolean | Object | RoutePropsFunction,
-  ): RoutePropsFunction => {
-    const propsDef = getReflectionRouteProps(routePropsClass);
+  const parseRouteProps = (routeConfig: AnalysedOutputRoute): RoutePropsFunction => {
+    const propsDef = getReflectionRouteProps(routeConfig.routeProps);
     return (route) => {
       const props: Object = {};
       propsDef.forEach((p) => {
@@ -46,6 +39,7 @@ export function parseRoutes(routes: AnalysedOutputRoute[]): RouteConfig[] {
       });
       // get original props value
       let objFromPropsInOptions: Object;
+      const propsInOptions = routeConfig.otherOptions?.props;
       if (typeof propsInOptions === 'function') {
         objFromPropsInOptions = propsInOptions(route);
       } else if (typeof propsInOptions === 'object') {
@@ -54,6 +48,8 @@ export function parseRoutes(routes: AnalysedOutputRoute[]): RouteConfig[] {
       // merge props
       return {
         ...props,
+        // @ts-ignore
+        ...route.meta?.state?.__bwcx_route_extraProps?.[routeConfig.name], // pass route related state (like `asyncData`) to props
         ...objFromPropsInOptions,
       };
     };
@@ -67,7 +63,7 @@ export function parseRoutes(routes: AnalysedOutputRoute[]): RouteConfig[] {
       path: route.path,
       component: route.component,
       children: Array.isArray(route.children) ? parseRoutes(route.children) : undefined,
-      props: parseRouteProps(route.routeProps, route.otherOptions?.props),
+      props: parseRouteProps(route),
     };
     parsedRoutes.push(r);
   }

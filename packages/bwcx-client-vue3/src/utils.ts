@@ -1,11 +1,7 @@
 import { Newable } from 'bwcx-common';
-import {
-  getPropsDefinitionFromRouteProps,
-  getReflectionRouteProps,
-  RenderMethodKind,
-} from 'bwcx-client-vue';
+import { getPropsDefinitionFromRouteProps, getReflectionRouteProps, RenderMethodKind } from 'bwcx-client-vue';
 import type { ComponentOptions, Prop } from 'vue';
-import type { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw, RouteLocationNormalizedLoaded } from 'vue-router';
 import { Vue } from 'vue-class-component';
 import type { VueConstructor, VueWithProps } from 'vue-class-component';
 import { BwcxVueRouteMetaOptions } from './typings';
@@ -39,11 +35,8 @@ export interface AnalysedOutputRoute {
 }
 
 export function parseRoutes(routes: AnalysedOutputRoute[]): RouteRecordRaw[] {
-  const parseRouteProps = (
-    routePropsClass: Newable | undefined,
-    propsInOptions?: boolean | Object | ((route: any) => Object),
-  ): ((route: any) => Object) => {
-    const propsDef = getReflectionRouteProps(routePropsClass);
+  const parseRouteProps = (routeConfig: AnalysedOutputRoute): ((route: RouteLocationNormalizedLoaded) => Object) => {
+    const propsDef = getReflectionRouteProps(routeConfig.routeProps);
     return (route) => {
       const props: Object = {};
       propsDef.forEach((p) => {
@@ -57,6 +50,7 @@ export function parseRoutes(routes: AnalysedOutputRoute[]): RouteRecordRaw[] {
       });
       // get original props value
       let objFromPropsInOptions: Object;
+      const propsInOptions = routeConfig.otherOptions?.props;
       if (typeof propsInOptions === 'function') {
         objFromPropsInOptions = propsInOptions(route);
       } else if (typeof propsInOptions === 'object') {
@@ -65,6 +59,8 @@ export function parseRoutes(routes: AnalysedOutputRoute[]): RouteRecordRaw[] {
       // merge props
       return {
         ...props,
+        // @ts-ignore
+        ...route.meta?.state?.__bwcx_route_extraProps?.[routeConfig.name], // pass route related state (like `asyncData`) to props
         ...objFromPropsInOptions,
       };
     };
@@ -79,7 +75,7 @@ export function parseRoutes(routes: AnalysedOutputRoute[]): RouteRecordRaw[] {
       component: route.component,
       children: Array.isArray(route.children) ? parseRoutes(route.children) : undefined,
       // @ts-ignore
-      props: parseRouteProps(route.routeProps, route.otherOptions?.props),
+      props: parseRouteProps(route),
     };
     parsedRoutes.push(r);
   }
